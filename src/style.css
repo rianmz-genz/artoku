@@ -1,0 +1,277 @@
+@layer base {
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+  @import url("https://fonts.googleapis.com/css2?family=Gluten:wght@300;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+  :root {
+    /* colorBg */
+    --bg-primary: rgba(30, 33, 35, 0.7);
+    --bg-accent: rgba(5, 95, 252, 0.7);
+    --bg-orange: rgba(255, 139, 32, 0.12);
+    --bg-blue: rgba(151, 125, 255, 0.12);
+    --bg-green: rgba(26, 182, 135, 0.12);
+    --bg-white: rgba(255, 255, 255, 0.1);
+    /* colorText */
+    --primary-color: white;
+    --secondary-color: #b0c0d2;
+    --orange-color: #ff8b20;
+    --blue-color: #977dff;
+    --green-color: #1ab687;
+    /* glassEff */
+    --glassEffect: blur(32px);
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    transition: .35s;
+  }
+  body {
+    font-family: "Gluten", cursive;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-image: url("/images/bgg.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: .35s;
+    scroll-behavior: smooth;
+  }
+  header {
+    background: var(--bg-accent);
+    backdrop-filter: var(--glassEffect);
+  }
+  main {
+    background: var(--bg-primary);
+    backdrop-filter: var(--glassEffect);
+  }
+  input[type=text] {
+    background: var(--bg-white);
+    border-radius: 3px;
+    width: 100%;
+    height: 35px;
+    color: var(--secondary-color);
+    padding: 0 3px;
+    margin: 0 auto;
+  }
+  input[type=password] {
+    background: var(--bg-white);
+    border-radius: 3px;
+    width: 100%;
+    height: 35px;
+    color: var(--secondary-color);
+    padding: 0 3px;
+    margin: 0 auto;
+  }
+  .bgicon{
+    background: var(--bg-white);
+  }
+  section{
+    color: var(--secondary-color);
+  }
+  .bgorange{
+    background: var(--bg-orange);
+    color: var(--orange-color);
+  }
+  .bggreen{
+    background: var(--bg-green);
+    color: var(--green-color);
+  }
+  .bgblue{
+    background: var(--bg-blue);
+    color: var(--blue-color);
+  }
+  .rilorange{
+    background: var(--orange-color);
+  }
+  .rilgreen{
+    background: var(--green-color);
+  }
+  .rilblue{
+    transition: .35s;
+    background: var(--blue-color);
+  }
+  .container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: rgba(255, 139, 32, 0.5);
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: var(--orange-color);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 5px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .containerg {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .containerg input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmarkg {
+    position: absolute;
+    top: 15px;
+    left: 4%;
+    height: 15px;
+    width: 15px;
+    background-color: rgba(26, 182, 135, 0.3);
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .containerg:hover input ~ .checkmarkg {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .containerg input:checked ~ .checkmarkg {
+    background-color: var(--green-color);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmarkg:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .containerg input:checked ~ .checkmarkg:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .containerg .checkmarkg:after {
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 5px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .containerb {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .containerb input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmarkb {
+    position: absolute;
+    top: 15px;
+    left: 8%;
+    height: 15px;
+    width: 15px;
+    background-color: rgba(151, 125, 255, 0.3);
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .containerb:hover input ~ .checkmarkb {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .containerb input:checked ~ .checkmarkb {
+    background-color: var(--blue-color);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmarkb:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .containerb input:checked ~ .checkmarkb:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .containerb .checkmarkb:after {
+    left: 0;
+    top: 15px;
+    width: 5px;
+    height: 5px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .rilgradient{
+    background: linear-gradient(45deg, #ff8b20,#977dff);
+  }
+}

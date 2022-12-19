@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- linkedcss -->
+        <link rel="stylesheet" href="src/style.css">
+        <!-- fav -->
+        <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+        <!-- tailwindcdn -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- fontawesome -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <!-- fontGoogle -->
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link
+            rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link
+            href="https://fonts.googleapis.com/css2?family=Gluten:wght@300;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+        <title>ArtoKu</title>
+    </head>
+    <body class="max-h-screen h-screen w-full flex justify-center items-center">
+        <main class="w-5/12 h-5/6 rounded-xl max-sm:w-11/12 max-w-[400px]">
+            <div class="w-full h-full flex justify-center items-center flex-col
+                gap-8 text-white">
+                <h1 class="text-xl">Selamat Datang di Artoku</h1>
+                <p id="notes" class="text-red-400"></p>
+                <label for="username" class="w-10/12">
+                    <h1 class="text-white">Username</h1>
+                    <input type="text" name="username" id="username"
+                        class="rounded-full mt-3 pl-4" placeholder="ketikan
+                        username" required autofocus maxlength="15"/>
+                </label>
+                <label for="password" class="w-10/12">
+                    <h1 class="text-white">Password</h1>
+                    <input type="password" name="password" id="password"
+                        class="rounded-full mt-3 pl-4" placeholder="ketikan
+                        password" required maxlength="13"/>
+                </label>
+                <button onclick="handleSubmit()" type="submit" class="text-white
+                    px-4 rounded-full py-1 bg-slate-700 backdrop-sm">Login</button>
+            </div>
+        </main>
+
+        <!-- javascript -->
+        <script src="src/login.js"></script>
+    </body>
+</html>

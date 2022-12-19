@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- fav -->
+        <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+        <!-- linkedcss -->
+        <link rel="stylesheet" href="src/style.css">
+        <!-- tailwindcdn -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- fontawesome -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <!-- fontGoogle -->
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link
+            rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link
+            href="https://fonts.googleapis.com/css2?family=Gluten:wght@300;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+        <title>ArtoKu</title>
+    </head>
+    <body class="max-h-screen h-screen w-full flex justify-center
+        md:items-center relative ">
+        <header class="h-14 md:w-10 w-[90%] max-sm:fixed z-20 bottom-0 max-sm:rounded-md
+            backdrop-blur-md md:h-[90%] max-sm:bg-transparent flex md:flex-col
+            md:justify-between md:py-3 justify-around text-slate-400 items-center max-sm:gap-3">
+            <ul class="flex justify-center md:flex-col max-sm:flex-row max-sm:gap-6
+                items-center gap-3 max-sm:mr-3 max-sm:h-full max-sm:text-xl">
+                <li class="text-white bgicon md:border-l-2 max-sm:border-t-2 max-sm:h-full border-white
+                pb-2 pt-1 px-3 text-base max-sm:text-xl  max-sm:flex items-center">
+                    <a href="./" ><i class="bi bi-house"></i></a>
+                </li>
+                <li>
+                    <a href="./tambahtabungan"><i class="bi bi-plus-square"></i></a>
+                </li>
+            </ul>
+            <ul class="flex justify-center max-sm:border-l max-sm:pl-4 border-[#364049] max-sm:text-xl md:flex-col items-center gap-3 max-sm:gap-6 max-sm:h-full">
+                <li>
+                    <a href=""><i class="bi bi-gear"></i></a>
+                </li>
+                <li class="ml-1">
+                    <a href="./login"><i class="bi bi-box-arrow-right"></i></a>
+                </li>
+            </ul>
+        </header>
+        <main class="w-9/12 h-[90%] max-sm:w-11/12 grid grid-cols-6
+            max-sm:grid-cols-1 max-sm:h-fit max-sm:pb-16 max-sm:mt-3 max-sm:rounded-md">
+            <!-- left -->
+            <section class="md:col-span-1 md:border-r border-[#364049] pt-3
+                max-sm:order-last">
+                <div class="w-10/12 mt-3 mx-auto">
+                    <!-- history -->
+                    <p class="text-xs text-white text-center">Riwayat Tabungan</p>
+                    <p class="text-xs bgblue mt-2 py-1 pb-2 cursor-pointer
+                        text-center" onclick="clearhistory()">Clear</p>
+                    <div id="histori" class="text-xs mt-3"></div>
+                </div>
+            </section>
+            <!-- mid -->
+            <section class="md:col-span-3 md:border-r max-sm:border-b
+                max-sm:pb-3 border-[#364049] pt-3">
+                <div class="w-11/12 mx-auto h-full">
+                    <div class="flex justify-between mt-3">
+                        <h1 class="flex items-center text-white"><i class="bi
+                                bi-calendar-range mr-2 -mt-1"></i>Semua Wishlist</h1>
+                        <div class="flex items-center">
+                            <p class="text-[10px] mr-3">Filter</p>
+                            <div onclick="getItemList()" id="filterall"
+                                class="rilgradient cursor-pointer hover:border-2
+                                w-4 h-4 block rounded-full mr-3 border-2"></div>
+                            <div onclick="filtered('green')" id="filtergreen"
+                                class="rilgreen cursor-pointer hover:border-2
+                                w-4 h-4 block rounded-full mr-3"></div>
+                            <div onclick="filtered('blue')" id="filterblue"
+                                class="rilblue cursor-pointer hover:border-2 w-4
+                                h-4 block rounded-full mr-3"></div>
+                            <div onclick="filtered('orange')" id="filterorange"
+                                class="rilorange cursor-pointer hover:border-2
+                                w-4 h-4 block rounded-full"></div>
+                        </div>
+                    </div>
+                    <a href="tambahtabungan.html" class="mt-6 w-full h-9
+                        text-[#969A9E] cursor-pointer
+                        bgicon flex items-center">
+                        <i class="bi bi-plus max-sm:ml-1 ml-3 -mt-1"></i>
+                        <p class="ml-1 text-sm max-sm:text-xs">Klik disini untuk
+                            menambah
+                            wishlist</p>
+                    </a>
+                    <h2 class="text-xs mt-6">Belum Terbeli <i class="bi
+                            bi-chevron-down ml-1"></i></h2>
+                    <!-- wishlist -->
+                    <div id="wishlist" class="grid grid-cols-2 gap-3 mt-3
+                        max-sm:grid-cols-1 ">
+                    </div>
+                    <h2 class="text-xs mt-6">Terbeli <i class="bi
+                            bi-chevron-down ml-1"></i></h2>
+                    <div id="terbeli" class="grid grid-cols-2 gap-3 mt-3
+                        max-sm:grid-cols-1 ">
+                    </div>
+                </section>
+                <!-- right -->
+                <section class="md:col-span-2 pt-3 relative w-full
+                    max-sm:order-first max-sm:border-b max-sm:pb-3
+                    max-sm:border-[#364049]">
+                    <div class="relative w-full flex items-center py-2 px-5
+                        mx-auto border-b border-[#364049]">
+                        <i class="bi bi-person-circle text-2xl mr-3"></i>
+                        <p id="nama"></p>
+                        <p class="absolute right-0 -top-2 bgicon px-2 text-sm">Free</p>
+                    </div>
+                    <!-- total tabungan -->
+                    <div class="w-10/12 mt-4 mx-auto h-fit px-3 py-2 pb-3
+                        bgicon">
+                        <p class="text-base">Tabungan Kamu</p>
+                        <div class="flex items-center justify-between ">
+                            <p id="totaltabungan" class="text-sm">Rp. ....</p>
+                            <div id="buttoneye" class="shadow-md cursor-pointer
+                                bgorange px-2 pb-1 rounded-full">
+                                <i onclick="showTabungan()" class="bi bi-eye
+                                    text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- detail -->
+                    <p class="w-10/12 mt-7 text-sm mx-auto">Detail</p>
+                    <div id="details" class="bgicon w-10/12 mt-2 mx-auto h-fit
+                        px-3 py-2 pb-3">
+                    </div>
+                </section>
+            </main>
+
+
+
+            <!-- javascript -->
+            <script src="src/main.js"></script>
+        </body>
+    </html>
