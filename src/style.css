@@ -26,7 +26,7 @@
   body {
     font-family: "Gluten", cursive;
     font-family: "Plus Jakarta Sans", sans-serif;
-    background-image: url("/images/bgg.png");
+    background-image: url("../images/bgg.png");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;

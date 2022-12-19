@@ -115,7 +115,7 @@ const check = (e) => {
   let tambahan = 123
   if(ternari == true){
     if(name == ""){
-      return console.log("datagabolehkosong")
+      return
     }
     tambahan = parseInt(name)
     p.ditabung += parseInt(name)
@@ -131,13 +131,12 @@ const check = (e) => {
     return window.location.href = "index.html"
   }else{
   if(category == null){
-    return console.log("datagabolehkosong")
+    return
   }
   tambahan = parseInt(category)
    p.ditabung += parseInt(category)
 }
   const datas = {ditabung: tambahan, bg: "bggreen"}
-  console.log(p)
   if(p.ditabung >= p.harga){
     document.getElementById("modal").classList.add("block")
     return document.getElementById("modal").classList.remove("hidden")

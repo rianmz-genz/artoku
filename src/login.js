@@ -7,10 +7,10 @@ let handleSubmit = () => {
     let dataUser = { username, password }
     // setTolocalStorage
     localStorage.setItem("users", JSON.stringify(dataUser))
-    if(username != "admin"){
+    if(username == ""){
         return document.getElementById("notes").innerHTML = "Isi data terlebih dahulu"
     }
-    window.location.href = "index"
+    window.location.href = "./"
     // setinput null
     document.getElementById("username").value = ""
     document.getElementById("password").value = ""

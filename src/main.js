@@ -2,6 +2,11 @@
 let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 let terbeli = JSON.parse(localStorage.getItem("terbeli")) || [];
 let history = JSON.parse(localStorage.getItem("history")) || [];
+let users = JSON.parse(localStorage.getItem("users")) || [];
+if(users.length === 0){
+  window.location.href = "./login"
+}
+
 // getId
 let nama = document.getElementById("nama");
 let totaltabungan = document.getElementById("totaltabungan");
@@ -18,7 +23,6 @@ let total = p.reduce((x, y) => x + y, 0);
 // detail
 let detail = wishlist.filter((x, i) => i === 0);
 // user
-let users = JSON.parse(localStorage.getItem("users")) || [];
 let { username } = users;
 
 // innerUser
@@ -278,7 +282,6 @@ if (wishlist.length !== 0) {
 let generateHistory = () => {
   if (history.length !== 0) {
     let yahu = history.filter((x,i)=> i < 7)
-    console.log(yahu)
     histori.innerHTML = yahu
       .map((x, i) => {
         let { ditabung, bg } = x;
